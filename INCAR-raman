@@ -1,0 +1,53 @@
+SYSTEM = opt-3
+#ISTART  = 0
+#ICHARG = 2
+#LWAVE=F 
+#LCHARG=F
+
+#ISPIN = 2
+ENCUT = 400
+ISMEAR  = 0
+SIGMA = 0.1
+
+GGA = RP
+#IVDW= 11  ! DFT-D3
+
+LREAL = Auto  
+EDIFF = 1e-5
+#EDIFFG= -0.01
+PREC = N
+ALGO = F
+NPAR=4
+
+NELM = 400
+NELMIN = 5
+#NELMDL = -10
+
+#NSW = 500
+#POTIM = 0.4
+#IBRION = 1  !low_accuracy use qn
+#ISIF=2
+
+#phonon
+#! phonons
+#ICHAIN = 1      ! Run the dynamical matrix code
+#! IMAGES  M     ! Number of parallel images, if desired as in step 2 above; otherwise, do not add.
+#NSW = 22        ! (DOF/M)+1   Number of ionic steps
+#IBRION =   3    ! Tell VASP to run dynamics,
+#POTIM  = 0.0    ! with a time step of zero (ie, do nothing)
+#ISYM = 0        ! Make sure that symmetry is off,
+#EDIFFG = -1E-12 ! and that vasp does not quit due to low forces
+#NWRITE=3
+
+LEPSILON=T
+ISYM=0
+
+#IDIPOL=3
+#LDIPOL=.TRUE.
+
+
+#LSOL = .TRUE.
+#EB_K = 78.400000
+#TAU = 0.000000
+#LAMBDA_D_K = 3.000000
+
