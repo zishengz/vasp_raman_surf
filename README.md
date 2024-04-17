@@ -162,3 +162,17 @@ The results will be written to `vasp_raman.dat`:
 018   199.98279  134982.8422441  270614106923.9118347  2714215294981.2832031
 ... ...
 ```
+
+## VASP-related
+
+For some systems, the dielectric tensor may have large numbers that exceed the default digit limit of VASP. In those cases, the source code of VASP needs to be modified and recompiled.
+
+To be specific, in `finite_diff.F`， `linear_response.F`, and `pead.F`, change the "MACROSCOPIC STATIC DIELECTRIC TENSOR"-related output block to:
+
+```fortran
+1100   FORMAT(// &                                                       
+            " MACROSCOPIC STATIC DIELECTRIC TENSOR ",A/, &               
+            " ------------------------------------------------------"/, &
+            &       3(6X,3F26.6/), &                                     
+            " ------------------------------------------------------"/)  
+```
